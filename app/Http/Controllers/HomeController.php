@@ -12,6 +12,6 @@ class HomeController extends Controller
     {
         $data = Post::where('status', 'publish')->orderBy('id', 'desc')->paginate(5);
 
-        return view('components/posts.posts-page', compact('data'));
+        return view('components/Posts.Posts-page', compact('data'));
     }
 }

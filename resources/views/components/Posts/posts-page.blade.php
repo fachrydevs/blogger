@@ -1,6 +1,6 @@
-<x-posts.layout>
+<x-Posts.layout>
     @foreach ($data as $key => $value )
-        <x-posts.post title='{{ $value->title }}' description='{{ $value->description }}'
+        <x-Posts.post title='{{ $value->title }}' description='{{ $value->description }}'
             date="{{ $value->created_at->isoFormat('dddd, D MMMM Y') }}" user='{{ $value->user->name }}'
             link="{{ route('post-detail', ['slug' => $value->slug]) }}" />
     @endforeach
@@ -19,4 +19,4 @@
         </div>
 
     </div>
-</x-posts.layout>
+</x-Posts.layout>

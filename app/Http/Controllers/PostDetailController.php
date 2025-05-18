@@ -29,7 +29,7 @@ class PostDetailController extends Controller
 
         $pagination = $this->pagination($data->id);
 
-        return view('components.posts.post-detail', compact('data', 'pagination'));
+        return view('components.Posts.post-detail', compact('data', 'pagination'));
     }
 
     

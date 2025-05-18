@@ -8,7 +8,8 @@
     </head>
     <body class="font-sans antialiased h-screen relative bg-gray-100 ">
         <!-- Navigation -->
-        <x-posts.navigation/>
+        <x-Posts.navigation/>
+       
         <!-- Main Content -->
         <main class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8 ">
             <div class="bg-white shadow-sm rounded-lg p-6">
@@ -22,7 +23,7 @@
                 <div class="grid  grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
                     <!-- Blog Post Card -->
                     {{ $slot }}
-                    <!-- Repeat for more blog posts -->
+                    <!-- Repeat for more blog Posts -->
                 </div>
             </div>
         </main>

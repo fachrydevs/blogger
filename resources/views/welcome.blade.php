@@ -37,7 +37,7 @@
                             <p class="mt-4 ">Posted by Admin </p>
                         </div>
                     </div>
-                    <!-- Repeat for more blog posts -->
+                    <!-- Repeat for more blog Posts -->
                 </div>
             </div>
         </main>
