@@ -13,6 +13,8 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+        <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.8/dist/trix.css">
+        <script type="text/javascript" src="https://unpkg.com/trix@2.0.8/dist/trix.umd.min.js"></script>
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
@@ -20,12 +22,40 @@
 
             <!-- Page Heading -->
             @isset($header)
-                <header class="bg-white dark:bg-gray-800 shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
+            <header class="bg-white dark:bg-gray-900 shadow">
+                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                    <div class="block md:flex justify-between">
+                        <div>{{ $header }}</div>
+                        <div>
+                            @isset($headerRight)
+                                {{ $headerRight }}
+                            @endisset
+                        </div>
                     </div>
-                </header>
-            @endisset
+                    
+
+                    @if ($errors->any())
+                        <div class="max-w-7xl mx-auto bg-red-500 p-3 mt-3 text-white rounded-md">
+                            <ul>
+                                @foreach ($errors->all() as $error)
+                                    <li>{{ $error }}</li>
+                                @endforeach
+                            </ul>
+                        </div>
+                    @endif
+
+                    @session('success')
+                        <div class="max-w-7xl mx-auto bg-green-500 p-3 mt-3 text-white rounded-md">
+                            <ul>
+                                {{ session('success') }}
+                            </ul>
+                        </div>
+                    @endsession ($errors->any())
+
+
+                </div>
+            </header>
+        @endisset
 
             <!-- Page Content -->
             <main>
